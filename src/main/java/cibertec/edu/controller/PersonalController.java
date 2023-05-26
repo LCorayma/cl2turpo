@@ -23,7 +23,7 @@ protected final Log logger = LogFactory.getLog(this.getClass());
 	
 	@GetMapping({"/index","/","","/lista"})
 	private String index(Model model) {
-		String title = "Listado de Personal";
+		String title = "LISTADO";
 		model.addAttribute("titulo",title);
 		
 		Personal personalObj = this.personalService.getOnePersonal(1L);
