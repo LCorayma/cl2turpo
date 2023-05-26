@@ -10,8 +10,8 @@
 	<div class="container py-4">
 		<h1 class="color-verde" th:text="${titulo}"></h1>
 		<h2 class="color-naranja">Listado del Personal</h2>
-		<div th:if="${personal?.id == 0}">No pudimos recuperar la informacion del personal, verifica tu BD</div>
-		<table th:if="${personal?.id != 0}">
+		<div th:if="${personal?.cod == 0}">No pudimos recuperar la informacion del personal, verifica tu BD</div>
+		<table th:if="${personal?.cod != 0}">
 			<thead>
 				<tr>
 					<th>Nombre del Personal</th>

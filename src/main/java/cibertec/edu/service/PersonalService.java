@@ -23,8 +23,8 @@ public class PersonalService {
 		return personalRepository.findAll();
 	}
 	
-	public Personal getOnePersonal(Long id){
-		Optional<Personal> personalResult = personalRepository.findById(id);
+	public Personal getOnePersonal(Long cod){
+		Optional<Personal> personalResult = personalRepository.findById(cod);
 		return personalResult.isPresent()? personalResult.get() : null;
 	}
 

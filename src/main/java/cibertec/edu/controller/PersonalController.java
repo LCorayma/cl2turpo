@@ -13,7 +13,6 @@ import cibertec.edu.service.PersonalService;
 
 @Controller
 @RequestMapping("/lista")
-
 public class PersonalController {
 
 protected final Log logger = LogFactory.getLog(this.getClass());
@@ -22,13 +21,13 @@ protected final Log logger = LogFactory.getLog(this.getClass());
 	private PersonalService personalService;
 	
 	@GetMapping({"/index","/","","/lista"})
-	private String index(Model model) {
+	private String index(Model modelo) {
 		String title = "LISTADO";
-		model.addAttribute("titulo",title);
+		modelo.addAttribute("titulo",title);
 		
 		Personal personalObj = this.personalService.getOnePersonal(1L);
 		
-		model.addAttribute("personal", personalObj);
+		modelo.addAttribute("personal", personalObj);
 		
 		logger.info("Objeto recuperado con exito!");
 		return "index";
