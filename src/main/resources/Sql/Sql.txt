@@ -1,0 +1,37 @@
+drop database CL2_Turpo;
+SET GLOBAL time_zone = '+8:00';
+
+CREATE DATABASE CL2_Turpo;
+USE CL2_Turpo;
+
+CREATE TABLE IF NOT EXISTS Areea(
+area_cod int NOT NULL AUTO_INCREMENT COMMENT 'Codigo de Area',
+area_nombre varchar(50) NOT NULL COMMENT 'Nombre de Area',
+area_jefe varchar(50) NOT NULL COMMENT 'Jefe de Area',
+PRIMARY KEY (`area_cod`)
+);
+
+CREATE TABLE IF NOT EXISTS Personal(
+personal_nombre varchar(100) NOT NULL COMMENT 'Nombre del Personal',
+personal_cod int NOT NULL AUTO_INCREMENT COMMENT 'Codigo de Personal',
+personal_sueldo varchar(20) NOT NULL COMMENT 'Sueldo del Personal',
+codigo_area int COMMENT 'Codigo de Area',
+FOREIGN KEY (codigo_area) REFERENCES Areea(area_cod),
+PRIMARY KEY (`personal_cod`)
+);
+
+INSERT INTO Areea VALUES (1, "Contabilidad", "Marquito");
+INSERT INTO Areea VALUES (2, "Gestiones", "Pancho");
+INSERT INTO Areea VALUES (3, "RRHH", "Fiorella");
+
+INSERT INTO Personal VALUES ("Luis Contreras", 1, "500", 1);
+INSERT INTO Personal VALUES ("Juana Miraflores", 2, "500", 2);
+INSERT INTO Personal VALUES ("Benito Diaz", 3, "500", 3);
+INSERT INTO Personal VALUES ("Lucas Rivera", 4, "500", 1);
+INSERT INTO Personal VALUES ("Maria Martinez", 5, "500", 1);
+INSERT INTO Personal VALUES ("Pedro Picapiedra", 6, "500", 2);
+INSERT INTO Personal VALUES ("Marco Gutierrez", 7, "500", 3);
+INSERT INTO Personal VALUES ("Alexia Quispe", 8, "500", 1);
+
+Select * from Areea;
+Select * from Personal;
